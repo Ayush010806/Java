@@ -1,31 +1,25 @@
 import java.util.*;
 public class BubbleSort {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        System.out.print("Enter number of elements: ");
-        int n = sc.nextInt();
-        int[] arr = new int[n];
-        System.out.println("Enter " + n + " numbers:");
-        for (int i = 0; i < n; i++) {
-            arr[i] = sc.nextInt();
+    public static void printArray(int arr[]){
+        for(int i = 0; i<arr.length;i++){
+            System.out.println(arr[i] + " ");
         }
-        // Time complexity O(n^2)
-        // Bubble Sort
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = 0; j < n - i - 1; j++) {
-                if (arr[j] > arr[j + 1]) {
-                    int temp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
+        System.out.println();
+    }
+    public static void main(String[] args) {
+        int arr[] = {7,8,3,1,2};
+        //time complexity O(n^2)
+        //Bubble Sort
+            for(int i = 0; i<arr.length -1 ; i++){
+                for(int j = 0; j<arr.length-i-1; j++){
+                    if(arr[j] > arr[j+1]){
+                        //Then swap that number
+                        int temp = arr[j];
+                        arr[j] = arr[j+1];
+                        arr[j+1] = temp;
+                    }
                 }
             }
-        }
-
-        // Printing our inserted no into sorted array
-        System.out.println("Sorted array:");
-        for (int num : arr) {
-            System.out.print(num + " ");
-        }
+            printArray(arr);
     }
 }
